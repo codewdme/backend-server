@@ -11,6 +11,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/codewdme/portfolio", require("./routes/fetchprojectinfo"));
 app.use("/codewdme/portfolio", require("./routes/addprojectinfo"));
+app.use("/edgerunners/junexus", require("./routes/fetchfileinfo"));
+app.use("/edgerunners/junexus", require("./routes/addfileinfo"));
 
 app.listen(port, () => {
   console.log(`server started at port ${port}`);
