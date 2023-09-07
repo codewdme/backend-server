@@ -10,6 +10,11 @@ const fileInfoSchema = new Schema({
     type: String,
     required: true,
   },
+
+  category: {
+    type: String,
+    required: true,
+  },
   course: {
     type: String,
     required: true,

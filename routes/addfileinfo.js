@@ -21,8 +21,10 @@ router.post(
     }
     //  creates a new fileInfo if one doesn't exist
     try {
-      let originalString = req.body.course;
-      let courseName = originalString.replace(/\./g, "").toUpperCase();
+      let originalCourseName = req.body.course;
+      let originalCategoryName = req.body.category;
+      let courseName = originalCourseName.replace(/\./g, "").toUpperCase();
+      let categoryName = originalCategoryName.replace(/\./g, "").toUpperCase();
 
       filesData = await fileInfo.create({
         fileName: req.body.fileName,
@@ -30,6 +32,7 @@ router.post(
         fileDownloadUrl: req.body.fileDownloadUrl,
         year: req.body.year,
         course: courseName,
+        category: categoryName,
         semester: req.body.semester,
         examName: req.body.examName,
       });
