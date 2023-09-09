@@ -15,7 +15,7 @@ router.post(
     }
 
     // checks whether there exists a fileInfo with that description already.
-    let filesData = await fileInfo.findOne({ fileName: req.body.fileName });
+    let filesData = await fileInfo.findOne({ fileUrl: req.body.fileUrl });
     if (filesData) {
       return res.status(400).json({ message: "file already exists" });
     }
