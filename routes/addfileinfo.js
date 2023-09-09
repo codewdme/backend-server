@@ -25,6 +25,7 @@ router.post(
       let originalCategoryName = req.body.category;
       let courseName = originalCourseName.replace(/\./g, "").toUpperCase();
       let categoryName = originalCategoryName.replace(/\./g, "").toUpperCase();
+      console.log("check");
 
       filesData = await fileInfo.create({
         fileName: req.body.fileName,
@@ -33,6 +34,7 @@ router.post(
         year: req.body.year,
         course: courseName,
         category: categoryName,
+        author: req.body.author,
         semester: req.body.semester,
         examName: req.body.examName,
       });
