@@ -2,16 +2,29 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const fileInfoSchema = new Schema({
-  fileName: {
+  subject: {
     type: String,
     required: true,
   },
   examName: {
     type: String,
-    required: true,
+    default: "NULL",
+  },
+  subjectCode: {
+    type: String,
+    default: "NULL",
+  },
+  unitNo: {
+    type: Number,
+    default: "NULL",
+  },
+  assignmentNo: {
+    type: Number,
+    default: "NULL",
   },
   author: {
     type: String,
+    default: "NULL",
   },
 
   category: {

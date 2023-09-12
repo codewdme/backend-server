@@ -28,7 +28,7 @@ router.post(
       console.log("check");
 
       filesData = await fileInfo.create({
-        fileName: req.body.fileName,
+        subject: req.body.subject,
         fileUrl: req.body.fileUrl,
         fileDownloadUrl: req.body.fileDownloadUrl,
         year: req.body.year,
@@ -37,6 +37,8 @@ router.post(
         author: req.body.author,
         semester: req.body.semester,
         examName: req.body.examName,
+        unitNo: req.body.unitNo,
+        assignmentNo: req.body.assignmentNo,
       });
       res.send(filesData);
     } catch (error) {
