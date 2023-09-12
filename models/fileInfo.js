@@ -12,11 +12,11 @@ const fileInfoSchema = new Schema({
   },
   subjectCode: {
     type: String,
-    default: "NULL",
+    default: null,
   },
   unitNo: {
     type: Number,
-    default: "NULL",
+    default: null,
   },
   assignmentNo: {
     type: Number,
@@ -24,7 +24,7 @@ const fileInfoSchema = new Schema({
   },
   author: {
     type: String,
-    default: "NULL",
+    default: null,
   },
 
   category: {
