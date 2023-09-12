@@ -8,7 +8,7 @@ const fileInfoSchema = new Schema({
   },
   examName: {
     type: String,
-    default: "NULL",
+    default: null,
   },
   subjectCode: {
     type: String,
@@ -20,7 +20,7 @@ const fileInfoSchema = new Schema({
   },
   assignmentNo: {
     type: Number,
-    default: "NULL",
+    default: null,
   },
   author: {
     type: String,
