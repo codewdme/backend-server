@@ -29,6 +29,7 @@ router.post(
 
       filesData = await fileInfo.create({
         subject: req.body.subject,
+        subjectCode: req.body.subjectCode,
         fileUrl: req.body.fileUrl,
         fileDownloadUrl: req.body.fileDownloadUrl,
         year: req.body.year,

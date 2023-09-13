@@ -8,23 +8,23 @@ const fileInfoSchema = new Schema({
   },
   examName: {
     type: String,
-    default: null,
+    default: "NULL",
   },
   subjectCode: {
     type: String,
-    default: null,
+    default: "NULL",
   },
   unitNo: {
-    type: Number,
-    default: null,
+    type: String,
+    default: "NULL",
   },
   assignmentNo: {
-    type: Number,
-    default: null,
+    type: String,
+    default: "NULL",
   },
   author: {
     type: String,
-    default: null,
+    default: "EdgeRunners",
   },
 
   category: {
@@ -36,7 +36,7 @@ const fileInfoSchema = new Schema({
     required: true,
   },
   semester: {
-    type: Number,
+    type: String,
     required: true,
   },
   fileUrl: {
@@ -50,7 +50,7 @@ const fileInfoSchema = new Schema({
     unique: true,
   },
   year: {
-    type: Number,
+    type: String,
     required: true,
   },
   dateOfUpload: {

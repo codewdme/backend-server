@@ -4,7 +4,7 @@ const fileInfo = require("../models/fileInfo");
 
 // using get request to fetch file info from mongo db by passing query parameters in params.
 router.get(
-  "/fetchfileinfo/:category/:course/:semester/:subject",
+  "/fetchfileinfo/:category/:course/:semester/:subjectCode",
   async (req, res) => {
     // converting params value to the value that database can read
     let recievedCourseName = req.params["course"];
@@ -12,7 +12,7 @@ router.get(
 
     // setting value of sem from params
     let recievedSem = req.params["semester"];
-    let recievedSubjectName = req.params["subject"];
+    let recievedSubjectCode = req.params["subjectCode"];
 
     // converting params value to the value that database can read
     let recievedCategoryName = req.params["category"];
@@ -27,7 +27,7 @@ router.get(
         category: categoryName,
         semester: recievedSem,
         course: courseName,
-        subject: recievedSubjectName,
+        subjectCode: recievedSubjectCode,
       })
       .sort(sort);
 
