@@ -13,7 +13,7 @@ router.get(
 
     // setting value of sem from params
     let recievedSem = req.params["semester"];
-    onsole.log("recievedSem", typeof recievedSem);
+    console.log("recievedSem", typeof recievedSem);
     let recievedSubjectCode = req.params["subjectCode"];
     console.log("subjectcode", typeof recievedSubjectCode);
 
