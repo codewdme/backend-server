@@ -9,13 +9,17 @@ router.get(
     // converting params value to the value that database can read
     let recievedCourseName = req.params["course"];
     let courseName = recievedCourseName.replace(/\./g, "").toUpperCase();
+    console.log("receivedCourseName", recievedCourseName);
 
     // setting value of sem from params
     let recievedSem = req.params["semester"];
+    onsole.log("recievedSem", typeof recievedSem);
     let recievedSubjectCode = req.params["subjectCode"];
+    console.log("subjectcode", typeof recievedSubjectCode);
 
     // converting params value to the value that database can read
     let recievedCategoryName = req.params["category"];
+    console.log("recievedCategoryName", recievedCategoryName);
     let categoryName = recievedCategoryName.replace(/\./g, "").toUpperCase();
 
     // descending order sort
