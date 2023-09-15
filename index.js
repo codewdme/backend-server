@@ -2,7 +2,6 @@ const connectToMongo = require("./dbconnect");
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const multer = require("multer");
 
 connectToMongo();
 const app = express();
@@ -16,7 +15,7 @@ app.use("/codewdme/portfolio", require("./routes/addprojectinfo"));
 // ju nexus
 app.use("/edgerunners/junexus", require("./routes/fetchfileinfo"));
 app.use("/edgerunners/junexus", require("./routes/addfileinfo"));
-app.use("/edgerunners/junexus", require("./routes/mailuploadedfile.js"));
+// app.use("/edgerunners/junexus", require("./routes/mailuploadedfiles"));
 
 app.listen(port, () => {
   console.log(`server started at port ${port}`);
