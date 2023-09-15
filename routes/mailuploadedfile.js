@@ -3,11 +3,14 @@ const express = require("express");
 const multer = require("multer");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const os = require("os");
 
 const router = express.Router();
 
+const tempDir = os.tmpdir();
+
 const storage = multer.diskStorage({
-  destination: "./uploads/",
+  destination: `${tempDir}/uploads/`,
   filename: (req, file, callback) => {
     console.log("Check");
     callback(
