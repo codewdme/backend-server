@@ -4,6 +4,7 @@ const multer = require("multer");
 const nodemailer = require("nodemailer");
 const path = require("path");
 const os = require("os");
+const fs = require("fs");
 
 const router = express.Router();
 
@@ -56,6 +57,17 @@ router.post("/mailuploadedfile", upload.single("file"), (req, res) => {
         .status(500)
         .json({ message: "File upload and email sending failed." });
     }
+    // delete file code.
+    const filePath = req.file.path; // Replace with the path to your file
+
+    // Use the fs.unlink method to delete the file
+    fs.unlink(filePath, (err) => {
+      if (err) {
+        console.error(`Error deleting file: ${err}`);
+      } else {
+        console.log(`File deleted: ${filePath}`);
+      }
+    });
     console.log("Email sent:", info.response);
     res.json({ message: "File uploaded and email sent successfully." });
   });
