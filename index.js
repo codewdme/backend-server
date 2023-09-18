@@ -17,7 +17,7 @@ app.use("/edgerunners/junexus", require("./routes/fetchfileinfo"));
 app.use("/edgerunners/junexus", require("./routes/addfileinfo"));
 app.use("/edgerunners/junexus", require("./routes/mailuploadedfile"));
 app.use("/edgerunners/junexus", require("./routes/verifymailid"));
-app.use("/edgerunners/junexus", require("./routes/addmailid"));
+// app.use("/edgerunners/junexus", require("./routes/addmailid"));
 app.use("/edgerunners/junexus", require("./routes/generateotp"));
 
 app.listen(port, () => {
