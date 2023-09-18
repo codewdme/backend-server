@@ -3,7 +3,7 @@ const { options } = require("./verifymailid");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 let emailIdUnderVerification = "creator.techwhiz@gmail.com";
-const mailId = require("../models/mailId");
+const mailId = require("../models/mailid");
 
 const transporter = nodemailer.createTransport({
   service: "Gmail", // Use your email service

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mailId = require("../models/mailId");
+let mailId = require("../models/mailid");
 
 // using get request to fetch file info from mongo db by passing query parameters in params.
 router.get("/verifymailid/:mailid", async (req, res) => {

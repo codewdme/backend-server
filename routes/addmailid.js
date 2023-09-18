@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mailId = require("../models/mailId");
+const mailId = require("../models/mailid");
 const { body, validationResult } = require("express-validator");
 
 // crating new registered mailId
