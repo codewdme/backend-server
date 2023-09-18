@@ -7,4 +7,4 @@ const mailIdSchema = new Schema({
   dateOfVerification: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model("mailIdList", mailIdSchema);
+module.exports = mongoose.model("mailId", mailIdSchema);

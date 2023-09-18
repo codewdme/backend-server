@@ -5,7 +5,7 @@ const cors = require("cors");
 
 connectToMongo();
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port || 3001;
 
 app.use(express.json());
 app.use(cors());
@@ -16,6 +16,9 @@ app.use("/codewdme/portfolio", require("./routes/addprojectinfo"));
 app.use("/edgerunners/junexus", require("./routes/fetchfileinfo"));
 app.use("/edgerunners/junexus", require("./routes/addfileinfo"));
 app.use("/edgerunners/junexus", require("./routes/mailuploadedfile"));
+app.use("/edgerunners/junexus", require("./routes/verifymailid"));
+app.use("/edgerunners/junexus", require("./routes/addmailid"));
+app.use("/edgerunners/junexus", require("./routes/generateotp"));
 
 app.listen(port, () => {
   console.log(`server started at port ${port}`);

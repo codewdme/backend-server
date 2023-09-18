@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const fileInfo = require("../models/fileInfo");
+const mailId = require("../models/mailId");
 const { body, validationResult } = require("express-validator");
 
 // crating new registered mailId
@@ -15,13 +15,13 @@ router.post(
     }
 
     // checks whether there exists a fileInfo with that description already.
-    let mailIdData = await fileInfo.findOne({ emailId: req.body.emailId });
+    let mailIdData = await mailId.findOne({ emailId: req.body.emailId });
     if (mailIdData) {
       return res.status(400).json({ message: "Email-Id already exists" });
     }
     //  creates a new  regisetered mail Id if one doesn't exist
     try {
-      mailIdData = await mailIdList.create({
+      mailIdData = await mailId.create({
         emailId: req.body.emailId,
         username: req.body.username,
       });
