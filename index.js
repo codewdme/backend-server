@@ -10,8 +10,8 @@ const port = process.env.port || 3001;
 app.use(express.json());
 app.use(cors());
 // portfolio
-app.use("/codewdme/portfolio", require("./routes/fetchprojectinfo"));
-app.use("/codewdme/portfolio", require("./routes/addprojectinfo"));
+app.use("/codewdme/portfolio", require("./routes/Portfolio/fetchprojectinfo"));
+app.use("/codewdme/portfolio", require("./routes/Portfolio/addprojectinfo"));
 // ju nexus
 app.use("/edgerunners/junexus", require("./routes/fetchfileinfo"));
 app.use("/edgerunners/junexus", require("./routes/addfileinfo"));
