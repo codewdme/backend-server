@@ -11,6 +11,7 @@ router.get(
     let data = await projectInfo.find({}).sort(sort);
 
     try {
+      console.log();
       res.send(data);
     } catch (error) {
       console.error(error.message);
