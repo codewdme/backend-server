@@ -7,7 +7,8 @@ router.get(
   "/fetchprojectinfo",
 
   async (req, res) => {
-    let data = await projectInfo.find({});
+    const sort = { year: -1 };
+    let data = await projectInfo.find({}).sort(sort);
 
     try {
       res.send(data);

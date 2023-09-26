@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const projectInfo = require("../models/projectInfo");
+const projectInfo = require("../../models/projectInfo");
 
 // get all projectInfo using GET : "/api/projectInfo/fetchallprojectInfo" . login required.
 router.post("/addprojectinfo", async (req, res) => {
