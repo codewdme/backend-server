@@ -1,0 +1,17 @@
+const projectInfo = require("../../models/projectInfo");
+
+// using get request to fetch file info from mongo db by passing query parameters in params.
+const fetchProjectInfo = async (req, res) => {
+  const sort = { dateOfUpload: -1 };
+  let data = await projectInfo.find({}).sort(sort);
+
+  try {
+    console.log();
+    res.send(data);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("some error Occured");
+  }
+};
+
+module.exports = { fetchProjectInfo };

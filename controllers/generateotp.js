@@ -1,6 +1,3 @@
-const express = require("express");
-const { options } = require("./verifymailid");
-const router = express.Router();
 const nodemailer = require("nodemailer");
 let emailIdUnderVerification = "creator.techwhiz@gmail.com";
 const mailId = require("../models/mailid");
@@ -57,13 +54,13 @@ async function addMailId() {
   }
 }
 
-router.post("/generateotp", async (req, res) => {
+const generateOtp = async (req, res) => {
   emailIdUnderVerification = req.body.userEmailId;
   generateotp();
   res.status(200).send({ message: `OTP sent to ${emailIdUnderVerification}` });
-});
+};
 
-router.post("/verifyotp", async (req, res) => {
+const verifyOtp = async (req, res) => {
   let recievedOtp = req.body.inputOtp;
   emailIdUnderVerification = req.body.userEmailId;
   console.log("recieved otp", recievedOtp);
@@ -76,6 +73,6 @@ router.post("/verifyotp", async (req, res) => {
   } else {
     res.send({ message: "false" });
   }
-});
+};
 
-module.exports = router;
+module.exports = { verifyOtp, generateOtp };

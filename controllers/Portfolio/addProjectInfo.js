@@ -1,9 +1,7 @@
-const express = require("express");
-const router = express.Router();
 const projectInfo = require("../../models/projectInfo");
 
 // get all projectInfo using GET : "/api/projectInfo/fetchallprojectInfo" . login required.
-router.post("/addprojectinfo", async (req, res) => {
+const addProjectInfo = async (req, res) => {
   // checks whether there exists a projectInfo with that description already.
   let data = await projectInfo.findOne({
     githubRepoUrl: req.body.githubRepoUrl,
@@ -27,6 +25,6 @@ router.post("/addprojectinfo", async (req, res) => {
     console.error(error.message);
     res.status(500).send("some error Occured");
   }
-});
+};
 
-module.exports = router;
+module.exports = { addProjectInfo };
